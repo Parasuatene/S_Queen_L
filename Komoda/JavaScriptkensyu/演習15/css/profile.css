@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* 文書全体の設定 */
+body{
+    font-family: "メイリオ", "sans-serif";
+    background-image: url(../img/background.jpg);
+    color: #000000;
+}
+
+/* 見出しの設定 */
+h2{
+    font-size: 200%;
+}
+
+/* フッターの設定 */
+footer{
+    text-align: right;
+}
+
+/* その他の設定 */
+#quesution{
+    font-weight: bold;
+}
+
+th{
+    background-color: #07fff5;
+    width: 100px;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+td{
+    padding: 5px;
+}
+
+dd{
+    margin: 0 0 1em 1em;
+}
+
+dt{
+    padding-left: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-left: 10px solid #07fff5;
+    border-bottom: 1px solid #cccccc;
+}
+
+article{
+    background-color: aliceblue;
+    margin: 0 auto;
+    width: 720px;
+    padding: 20px;
+    border: 3px forestgreen dotted;
+    border-radius: 10px;
+}
+
+table{
+    margin: 10px 20px;
+    border: 1px #000000 solid;
+    border-collapse: collapse;
+}
+
+li{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    color: #0000ff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+a:hover{
+    color: #e00a44;
+    background-color: #daffea;
+}
+
+#imgblock{
+    float: left;
+}
