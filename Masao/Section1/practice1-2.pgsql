@@ -1,0 +1,1 @@
+alter table jyushoroku add column yubin_bango char(8) not null;
