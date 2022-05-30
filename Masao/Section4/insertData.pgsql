@@ -12,3 +12,10 @@ INSERT INTO ShohinIns VALUES
 
 --列リストの省略
 INSERT INTO ShohinIns VALUES ('0005', '圧力鍋', 'キッチン用品', 6800, 5000, '2009-01-15');
+
+--NULLを挿入する
+INSERT INTO ShohinIns (
+    shohin_id, shohin_mei, shohin_bunrui, hanbai_tanka, shiire_tanka, torokubi
+) VALUES (
+    '0006', 'フォーク', 'キッチン用品', 500, NULL, '2009-09-20' --NULLを挿入
+);
