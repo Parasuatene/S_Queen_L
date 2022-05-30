@@ -16,3 +16,20 @@ SELECT shohin_bunrui, cnt_shohin
  事務用品      |          2
 (3 行)
 */
+
+--多段ビュー
+CREATE VIEW ShohinSumJim (shohin_bunrui, cnt_shohin)
+    AS
+SELECT shohin_bunrui, cnt_shohin
+  FROM ShohinSum --ビューからビューをつくる
+ WHERE shohin_bunrui = '事務用品';
+
+--多段ビューの作成を確認
+SELECT shohin_bunrui, cnt_shohin
+  FROM ShohinSumJim;
+/*
+ shohin_bunrui | cnt_shohin
+---------------+------------
+ 事務用品      |          2
+(1 行)
+*/
