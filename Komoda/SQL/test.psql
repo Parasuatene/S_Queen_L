@@ -8,6 +8,10 @@
 -- RANK () OVER (ORDER BY hanbai_tanka) AS ranking
 -- FROM shohin;
 
+-- SELECT shohin_id, shohin_bunrui, hanbai_tanka,
+-- SUM(hanbai_tanka) OVER (ORDER BY shohin_id) AS current_sum
+-- FROM shohin;
+
 SELECT shohin_id, shohin_bunrui, hanbai_tanka,
-SUM(hanbai_tanka) OVER (ORDER BY shohin_id) AS current_sum
+AVG(hanbai_tanka) OVER (ORDER BY shohin_id ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS moving_avg
 FROM shohin;
