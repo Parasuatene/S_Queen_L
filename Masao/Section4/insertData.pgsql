@@ -58,3 +58,11 @@ INSERT INTO ShohinCopy (
 )
 SELECT shohin_id, shohin_mei, shohin_bunrui, hanbai_tanka, shiire_tanka, torokubi --SELECTで抽出したデータを挿入する
   FROM Shohin;
+
+--データを集約してINSERT ... SELECT文を利用する
+INSERT INTO ShohinBunrui (
+    shohin_bunrui, sum_hanbai_tanka, sum_shiire_tanka
+)
+  SELECT shohin_bunrui, SUM(hanbai_tanka), SUM(shiire_tanka) --集約関数を利用
+    FROM Shohin
+GROUP BY shohin_bunrui;
