@@ -51,3 +51,10 @@ INSERT INTO ShohinIns (
 ERROR:  列"shohin_mei"内のNULL値はNOT NULL制約違反です
 DETAIL:  失敗した行は(0008, null, 事務用品, 1000, 500, 2009-12-12)を含みます
 */
+
+--INSERT ... SELECT文
+INSERT INTO ShohinCopy (
+    shohin_id , shohin_mei, shohin_bunrui, hanbai_tanka, shiire_tanka, torokubi
+)
+SELECT shohin_id, shohin_mei, shohin_bunrui, hanbai_tanka, shiire_tanka, torokubi --SELECTで抽出したデータを挿入する
+  FROM Shohin;
