@@ -47,3 +47,23 @@ UPDATE Shohin
  0008      | ボールペン   | 事務用品      |          100 |              |
 (6 行)
 */
+
+--複数列更新（冗長な書き方）
+UPDATE Shohin
+   SET hanbai_tanka = hanbai_tanka * 10
+ WHERE shohin_bunrui = 'キッチン用品';
+
+UPDATE Shohin
+   SET shiire_tanka = shiire_tanka / 2
+ WHERE shohin_bunrui = 'キッチン用品';
+
+--複数列更新（列をカンマ区切りで並べる）-> 基本的にはこっちの方法が良い
+UPDATE Shohin
+   SET hanbai_tanka = hanbai_tanka * 10,
+       shiire_tanka = shiire_tanka / 2
+ WHERE shohin_bunrui = 'キッチン用品';
+
+--複数列更新（列をカッコで囲むことによるリスト表現）-> こっちはDBMSによっては使えない
+UPDATE Shohin
+   SET (hanbai_tanka, shiire_tanka) = (hanbai_tanka * 10, shiire_tanka / 2)
+ WHERE shohin_bunrui = 'キッチン用品';
