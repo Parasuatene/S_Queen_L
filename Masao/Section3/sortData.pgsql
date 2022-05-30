@@ -87,3 +87,20 @@ ORDER BY ht, id; --実行順がSELECTよりも後になるので、ASで定義�
  0005 | 圧力鍋         | 6800 |         5000
 (8 行)
 */
+
+  SELECT shohin_mei, hanbai_tanka, shiire_tanka
+    FROM Shohin
+ORDER BY shohin_id; --SELECT句で登場していないカラムであっても指定可能
+/*
+   shohin_mei   | hanbai_tanka | shiire_tanka
+----------------+--------------+--------------
+ Tシャツ        |         1000 |          500
+ 穴あけパンチ   |          500 |          320
+ カッターシャツ |         4000 |         2800
+ 包丁           |         3000 |         2800
+ 圧力鍋         |         6800 |         5000
+ フォーク       |          500 |
+ おろしがね     |          880 |          790
+ ボールペン     |          100 |
+(8 行)
+*/
