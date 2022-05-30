@@ -1,0 +1,3 @@
+SELECT *
+FROM shohin
+ORDER BY torokubi DESC, hanbai_tanka;
