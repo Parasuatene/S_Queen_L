@@ -34,3 +34,20 @@ INSERT INTO ShohinIns (
 '0007', 'おろしがね', 'キッチン用品', 790, '2009-04-28' --値も省略
 );
 
+--shiire_tanka列（制約なし）を省略
+INSERT INTO ShohinIns (
+    shohin_id, shohin_mei, shohin_bunrui, hanbai_tanka, torokubi
+) VALUES (
+'0008', 'ボールペン', '事務用品', 100, '2009-11-11'
+);
+
+--shohin_mei列（NOT NULL）を省略->エラー
+INSERT INTO ShohinIns (
+    shohin_id, shohin_bunrui, hanbai_tanka, shiire_tanka, torokubi
+) VALUES (
+'0008', '事務用品', 1000, 500, '2009-12-12'
+);
+/*
+ERROR:  列"shohin_mei"内のNULL値はNOT NULL制約違反です
+DETAIL:  失敗した行は(0008, null, 事務用品, 1000, 500, 2009-12-12)を含みます
+*/
