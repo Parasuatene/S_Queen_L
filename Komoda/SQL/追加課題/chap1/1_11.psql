@@ -1,0 +1,11 @@
+SELECT employee_id, last_name, salary, department_id FROM employees
+WHERE manager_id = 103
+ORDER BY last_name ASC;
+
+SELECT employee_id, last_name, salary, department_id FROM employees
+WHERE manager_id = 201
+ORDER BY salary ASC;
+
+SELECT employee_id, last_name, salary, department_id FROM employees
+WHERE manager_id = 124
+ORDER BY employee_id ASC;
