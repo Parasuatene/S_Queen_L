@@ -56,3 +56,23 @@ SELECT shohin_id,
  0003      | カッターシャツ |         4000 |         2800 |  1200
 (3 行)
 */
+
+--練習問題4.4
+BEGIN TRANSACTION;
+UPDATE ShohinSaeki
+   SET hanbai_tanka = 3000                 --販売単価を3000円にする
+ WHERE shohin_mei = 'カッターシャツ';
+
+UPDATE ShohinSaeki
+   SET saeki = hanbai_tanka - shiire_tanka --差益を再計算する(上のコマンドと同時にはできなかった、計算を先にしてから更新をまとめて行っているのかも)
+ WHERE shohin_mei = 'カッターシャツ';
+COMMIT;
+/*
+【実行後】
+ shohin_id |   shohin_mei   | hanbai_tanka | shiire_tanka | saeki
+-----------+----------------+--------------+--------------+-------
+ 0001      | Tシャツ        |         1000 |          500 |   500
+ 0002      | 穴あけパンチ   |          500 |          320 |   180
+ 0003      | カッターシャツ |         3000 |         2800 |   200
+(3 行)
+*/
