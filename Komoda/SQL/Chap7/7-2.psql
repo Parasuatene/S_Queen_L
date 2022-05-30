@@ -1,0 +1,6 @@
+SELECT 
+COALESCE(TS.tenpo_id, '不明'), 
+COALESCE(TS.tenpo_mei, '不明'), 
+S.shohin_id, S.shohin_mei, S.hanbai_tanka
+FROM tenposhohin AS TS RIGHT OUTER JOIN shohin AS S
+ON TS.shohin_id = S.shohin_id;
