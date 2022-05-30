@@ -68,3 +68,6 @@ INSERT INTO ShohinSumJim VALUES ('0009', '印鑑', '事務用品', 95, 10, '2009
  0008      | ボールペン     | 事務用品      |          100 |              | 2009-11-11
 (9 行)
 */
+
+--ビューの削除
+DROP VIEW ShohinSumJim;
