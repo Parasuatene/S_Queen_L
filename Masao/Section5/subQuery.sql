@@ -14,3 +14,22 @@ SELECT shohin_bunrui, cnt_shohin
  事務用品      |          2
 (3 行)
 */
+
+--3段のサブクエリ
+SELECT shohin_bunrui, cnt_shohin --➂商品分類でグループ化されたテーブルのデータ数が4のデータの商品分類とデータ数を表示
+  FROM (                         --➁商品分類でグループ化されたテーブルのデータ数が4のデータを抽出
+      SELECT * 
+        FROM (                   --➀商品テーブルを商品分類でグループ化
+              SELECT shohin_bunrui,
+                     COUNT(*) AS cnt_shohin
+                FROM Shohin
+            GROUP BY shohin_bunrui
+        ) AS ShohinSum
+       WHERE cnt_shohin = 4
+  ) AS ShohinSum2;
+/*
+ shohin_bunrui | cnt_shohin
+---------------+------------
+ キッチン用品  |          4
+(1 行)
+*/
