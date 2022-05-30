@@ -1,0 +1,7 @@
+SELECT shohin_mei, hanbai_tanka, shiire_tanka
+FROM shohin
+WHERE hanbai_tanka - 500 >= shiire_tanka;
+
+SELECT shohin_mei, hanbai_tanka, shiire_tanka
+FROM shohin
+WHERE shiire_tanka + 500 <= hanbai_tanka;

@@ -1,0 +1,7 @@
+-- グループごとに平均を出す→帰ってくる答えは3通り（複数）だからスカラーサブクエリにならない
+-- だから、相関サブクエリのwhere句で代入する先を決定する
+SELECT shohin_id, shohin_mei, shohin_bunrui, hanbai_tanka,
+(SELECT AVG(hanbai_tanka) FROM shohin S2
+WHERE S2.shohin_bunrui = S1.shohin_bunrui
+GROUP BY shohin_bunrui) AS avg_hanbai_tanka
+FROM shohin S1;
