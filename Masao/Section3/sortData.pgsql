@@ -67,3 +67,23 @@ ORDER BY shiire_tanka;
 
 ->NULLのデータが最後にまとめて表示されている
 */
+
+  SELECT shohin_id AS id,
+         shohin_mei,
+         hanbai_tanka AS ht,
+         shiire_tanka
+    FROM Shohin
+ORDER BY ht, id; --実行順がSELECTよりも後になるので、ASで定義された変数を使用できる
+/*
+  id  |   shohin_mei   |  ht  | shiire_tanka
+------+----------------+------+--------------
+ 0008 | ボールペン     |  100 |
+ 0002 | 穴あけパンチ   |  500 |          320
+ 0006 | フォーク       |  500 |
+ 0007 | おろしがね     |  880 |          790
+ 0001 | Tシャツ        | 1000 |          500
+ 0004 | 包丁           | 3000 |         2800
+ 0003 | カッターシャツ | 4000 |         2800
+ 0005 | 圧力鍋         | 6800 |         5000
+(8 行)
+*/
