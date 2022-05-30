@@ -27,3 +27,10 @@ INSERT INTO ShohinIns (
 '0007', 'おろしがね', 'キッチン用品', DEFAULT, 790, '2009-04-28' --デフォルト値を挿入するカラムにDEFAULTを指定
 );
 
+--暗黙的にデフォルト値を挿入
+INSERT INTO ShohinIns (
+    shohin_id, shohin_mei, shohin_bunrui, shiire_tanka, torokubi --hanbai_tankaを省略
+) VALUES (
+'0007', 'おろしがね', 'キッチン用品', 790, '2009-04-28' --値も省略
+);
+
