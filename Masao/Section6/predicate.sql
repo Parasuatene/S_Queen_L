@@ -101,3 +101,13 @@ SELECT shohin_mei, hanbai_tanka
  おろしがね     |          880
 (4 行)
  */
+
+--EXISTS関数
+SELECT shohin_mei, hanbai_tanka
+  FROM Shohin AS S
+ WHERE EXISTS (
+     SELECT *
+       FROM TenpoShohin AS TS
+      WHERE TS.tenpo_id = '000C'
+        AND TS.shohin_id = S.shohin_id
+ );
