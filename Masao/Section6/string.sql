@@ -39,3 +39,18 @@ SELECT str1,
  ミックマック |       6
 (11 行)
 */
+
+--文字列を小文字化
+SELECT str1,
+       LOWER(str1) AS low_str
+  FROM SampleStr
+ WHERE str1 IN ('ABC', 'aBC', 'abc', '山田');
+/*
+ str1 | low_str
+------+---------
+ abc  | abc
+ 山田 | 山田
+ ABC  | abc
+ aBC  | abc
+(4 行)
+*/
