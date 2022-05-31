@@ -5,8 +5,8 @@ SELECT TS.tenpo_id,
        S.shohin_mei, 
        S.hanbai_tanka
   FROM TenpoShohin AS TS
-  JOIN Shohin      AS S
-    ON TS.shohin_id = S.shohin_id;
+  JOIN Shohin      AS S            --JOINで複数のテーブルを内部結合している
+    ON TS.shohin_id = S.shohin_id; --結合キー（複数のテーブルを結びつける結合条件）
 /*
  tenpo_id | tenpo_mei | shohin_id |   shohin_mei   | hanbai_tanka 
 ----------+-----------+-----------+----------------+--------------
