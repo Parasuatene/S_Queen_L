@@ -1,0 +1,9 @@
+SELECT
+job_id,
+SUM(CASE WHEN department_id = 20 THEN salary ELSE NULL END),
+SUM(CASE WHEN department_id = 50 THEN salary ELSE NULL END),
+SUM(CASE WHEN department_id = 80 THEN salary ELSE NULL END),
+SUM(CASE WHEN department_id = 90 THEN salary ELSE NULL END),
+SUM(salary)
+FROM employees
+GROUP BY job_id
