@@ -1,0 +1,12 @@
+-- SELECT * FROM countries;
+-- SELECT * FROM locations;
+-- SELECT * FROM employees;
+-- SELECT * FROM departments;
+-- SELECT * FROM job_history;
+-- SELECT * FROM jobs;
+-- SELECT * FROM regions;
+
+SELECT E.last_name, E.department_id, D.department_name
+FROM employees AS E INNER JOIN departments AS D
+ON E.department_id = D.department_id
+ORDER BY E.last_name ASC;
