@@ -15,3 +15,14 @@ SELECT CAST('2009-12-14' AS DATE) AS date_col;
  2009-12-14
 (1 行)
 */
+
+--NULLを値へ変換する
+SELECT COALESCE(NULL, 1) AS col_1,
+       COALESCE(NULL, 'test', NULL) AS col_2,
+       COALESCE(NULL, NULL, '2009-11-01') AS col_3;
+/*
+ col_1 | col_2 |   col_3
+-------+-------+------------
+     1 | test  | 2009-11-01
+(1 行)
+*/
