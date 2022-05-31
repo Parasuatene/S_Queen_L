@@ -1,0 +1,17 @@
+SELECT
+E2.department_id,
+E1.last_name,
+E2.last_name
+FROM employees AS E1 LEFT OUTER JOIN employees AS E2
+ON E1.department_id = E2.department_id
+WHERE E1.last_name <> E2.last_name
+ORDER BY E2.department_id ASC;
+
+
+-- SELECT
+-- *
+-- FROM employees AS E1 LEFT OUTER JOIN employees AS E2
+-- ON E1.department_id = E2.department_id
+-- WHERE E1.last_name <> E2.last_name
+-- ORDER BY E2.department_id ASC;
+

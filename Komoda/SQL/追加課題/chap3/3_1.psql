@@ -1,0 +1,7 @@
+-- SELECT * FROM countries;
+-- SELECT * FROM locations;
+
+SELECT L.location_id, L.street_address, L.city, L.state_province, C.country_name
+FROM countries AS C INNER JOIN locations AS L
+ON C.country_id = L.country_id
+ORDER BY location_id ASC;
