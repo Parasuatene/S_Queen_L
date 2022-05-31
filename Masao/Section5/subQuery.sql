@@ -72,3 +72,16 @@ SELECT shohin_id,
  0008      | ボールペン     |          100 | 2097.5000000000000000
 (8 行)
 */
+
+--スカラ・サブクエリをHAVING句で利用する
+  SELECT shohin_bunrui, AVG(hanbai_tanka)
+    FROM Shohin
+GROUP BY shohin_bunrui
+  HAVING AVG(hanbai_tanka) > ( SELECT AVG(hanbai_tanka) FROM Shohin );
+/*
+ shohin_bunrui |          avg
+---------------+-----------------------
+ キッチン用品  | 2795.0000000000000000
+ 衣服          | 2500.0000000000000000
+(2 行)
+*/
