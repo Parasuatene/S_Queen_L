@@ -75,3 +75,24 @@ SELECT str1, str2, str3,
  ミックマック | ッ     | っ   | ミっクマっク
 (11 行)
 */
+
+--文字列の切り出し
+SELECT str1,
+       SUBSTRING(str1 FROM 3 FOR 2) AS sub_str --3文字目から2文字切り出す
+  FROM SampleStr;
+/*
+     str1     | sub_str
+--------------+---------
+ あいう       | う
+ abc          | c
+ 山田         |
+ aaa          | a
+              |
+ @!#$%        | #$
+ ABC          | C
+ aBC          | C
+ abc太郎      | c太
+ abcdefabc    | cd
+ ミックマック | クマ
+(11 行)
+*/
