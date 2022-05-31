@@ -1,0 +1,5 @@
+SELECT CAST(max(salary) AS BIGINT) AS Maximu,
+CAST(min(salary) AS BIGINT)  AS Minimun,
+CAST(sum(salary) AS BIGINT) AS Sum,
+CAST(avg(salary) AS BIGINT) AS Avarage
+FROM employees;
