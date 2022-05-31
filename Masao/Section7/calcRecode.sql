@@ -96,3 +96,17 @@ SELECT shohin_id, shohin_mei
  0005      | 圧力鍋
 (5 行)
 */
+
+--テーブルの引き算(さっきの逆)
+SELECT shohin_id, shohin_mei
+  FROM Shohin2
+EXCEPT --Shohin2 - Shohin
+SELECT shohin_id, shohin_mei
+  FROM Shohin;
+/*
+ shohin_id | shohin_mei
+-----------+------------
+ 0010      | やかん
+ 0009      | 手袋
+(2 行)
+*/
