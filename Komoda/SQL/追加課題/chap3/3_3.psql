@@ -1,0 +1,7 @@
+SELECT E.last_name, E.job_id, E.department_id, D.department_name
+FROM employees AS E INNER JOIN departments AS D
+ON E.department_id = D.department_id
+INNER JOIN locations AS L
+ON D.location_id = L.location_id
+WHERE L.city = 'Toronto'
+ORDER BY E.last_name ASC;
