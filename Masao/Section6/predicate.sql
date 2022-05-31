@@ -70,3 +70,16 @@ SELECT shohin_mei, shiire_tanka
  ボールペン |
 (2 行)
 */
+
+--複数の条件をIN関数で指定
+SELECT shohin_mei, shiire_tanka
+  FROM Shohin
+ WHERE shiire_tanka IN(320, 500, 5000); --INの中に条件を複数記述できる
+/*
+  shohin_mei  | shiire_tanka
+--------------+--------------
+ Tシャツ      |          500
+ 穴あけパンチ |          320
+ 圧力鍋       |         5000
+(3 行)
+*/
