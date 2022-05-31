@@ -1,7 +1,7 @@
 --前方一致処理
 SELECT *
   FROM SampleLike
- WHERE strcol LIKE 'ddd%';
+ WHERE strcol LIKE 'ddd%'; --%は0文字以上の任意の文字列
 /*
  strcol
 --------
@@ -30,5 +30,16 @@ SELECT *
  strcol
 --------
  abcddd
+(1 行)
+*/
+
+--LIKEとアンダーバーによる前方一致
+SELECT *
+  FROM SampleLike
+ WHERE strcol LIKE 'abc__'; --_は任意の文字1字
+/*
+ strcol
+--------
+ abcdd
 (1 行)
 */
