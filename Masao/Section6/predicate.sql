@@ -21,3 +21,14 @@ SELECT *
  abdddc
 (3 行)
 */
+
+--後方一致処理
+SELECT *
+  FROM SampleLike
+ WHERE strcol LIKE '%ddd';
+/*
+ strcol
+--------
+ abcddd
+(1 行)
+*/
