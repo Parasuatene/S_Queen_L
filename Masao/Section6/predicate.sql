@@ -109,5 +109,14 @@ SELECT shohin_mei, hanbai_tanka
      SELECT *
        FROM TenpoShohin AS TS
       WHERE TS.tenpo_id = '000C'
-        AND TS.shohin_id = S.shohin_id
+        AND TS.shohin_id = S.shohin_id --TenpoShohinテーブルのshohin_idと一致するものがShohinテーブルのshohin_idに存在するか確認する
  );
+/*
+   shohin_mei   | hanbai_tanka
+----------------+--------------
+ カッターシャツ |         4000
+ 包丁           |         3000
+ フォーク       |          500
+ おろしがね     |          880
+(4 行)
+*/
