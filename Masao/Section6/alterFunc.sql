@@ -26,3 +26,23 @@ SELECT COALESCE(NULL, 1) AS col_1,
      1 | test  | 2009-11-01
 (1 行)
 */
+
+--テーブルサンプルにCOALESCEを適応
+SELECT COALESCE(str2, 'NULLです')
+  FROM SampleStr;
+/*
+ coalesce
+----------
+ えお
+ def
+ 太郎
+ NULLです
+ あああ
+ NULLです
+ NULLです
+ NULLです
+ abc
+ abc
+ ッ
+(11 行)
+*/
