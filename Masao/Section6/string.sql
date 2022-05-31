@@ -54,3 +54,24 @@ SELECT str1,
  aBC  | abc
 (4 行)
 */
+
+--文字列の置換
+SELECT str1, str2, str3,
+       REPLACE(str1, str2, str3) AS rep_str
+  FROM SampleStr;
+/*
+     str1     |  str2  | str3 |   rep_str
+--------------+--------+------+--------------
+ あいう       | えお   |      |
+ abc          | def    |      |
+ 山田         | 太郎   | です | 山田
+ aaa          |        |      |
+              | あああ |      |
+ @!#$%        |        |      |
+ ABC          |        |      |
+ aBC          |        |      |
+ abc太郎      | abc    | ABC  | ABC太郎
+ abcdefabc    | abc    | ABC  | ABCdefABC
+ ミックマック | ッ     | っ   | ミっクマっク
+(11 行)
+*/
