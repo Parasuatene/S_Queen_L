@@ -43,3 +43,18 @@ SELECT *
  abcdd
 (1 行)
 */
+
+--範囲検索
+SELECT shohin_mei, hanbai_tanka
+  FROM Shohin
+ WHERE hanbai_tanka BETWEEN 100 AND 1000; --販売単価が100~1000円
+/*
+  shohin_mei  | hanbai_tanka
+--------------+--------------
+ Tシャツ      |         1000
+ 穴あけパンチ |          500
+ フォーク     |          500
+ おろしがね   |          880
+ ボールペン   |          100
+(5 行)
+*/
