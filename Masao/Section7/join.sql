@@ -4,8 +4,8 @@ SELECT TS.tenpo_id,
        TS.shohin_id, 
        S.shohin_mei, 
        S.hanbai_tanka
-  FROM TenpoShohin AS TS
-  JOIN Shohin      AS S            --JOINで複数のテーブルを内部結合している
+  FROM TenpoShohin  AS TS
+  INNER JOIN Shohin AS S            --INNER JOINで複数のテーブルを内部結合している
     ON TS.shohin_id = S.shohin_id; --結合キー（複数のテーブルを結びつける結合条件）
 /*
  tenpo_id | tenpo_mei | shohin_id |   shohin_mei   | hanbai_tanka 
@@ -30,8 +30,8 @@ SELECT TS.tenpo_id,
        TS.shohin_id, 
        S.shohin_mei, 
        S.hanbai_tanka
-  FROM TenpoShohin AS TS
-  JOIN Shohin      AS S 
+  FROM TenpoShohin  AS TS
+  INNER JOIN Shohin AS S 
     ON TS.shohin_id = S.shohin_id
  WHERE TS.tenpo_id = '000A';
 /*
