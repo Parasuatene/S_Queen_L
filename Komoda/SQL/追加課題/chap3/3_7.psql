@@ -1,0 +1,14 @@
+SELECT 
+E.last_name,
+E.job_id,
+D.department_name,
+E.salary,
+(CASE WHEN E.salary BETWEEN 1000 AND 2999 THEN 'A' 
+        WHEN E.salary BETWEEN 3000 AND 5999 THEN 'B' 
+        WHEN E.salary BETWEEN 6000 AND 9999 THEN 'C' 
+        WHEN E.salary BETWEEN 10000 AND 14999 THEN 'D' 
+        WHEN E.salary BETWEEN 15000 AND 24999 THEN 'E' 
+        WHEN E.salary BETWEEN 25000 AND 40000 THEN 'F' 
+        ELSE NULL END) AS GRADE_LEVEL
+FROM employees AS E INNER JOIN departments AS D
+ON E.department_id = D.department_id;
