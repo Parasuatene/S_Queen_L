@@ -83,3 +83,21 @@ SELECT shohin_mei, shiire_tanka
  圧力鍋       |         5000
 (3 行)
 */
+
+--INの引数にサブクエリを利用する
+SELECT shohin_mei, hanbai_tanka
+  FROM Shohin
+ WHERE shohin_id IN( -- IN関数の中がサブクエリ
+     SELECT shohin_id
+       FROM TenpoShohin
+      WHERE tenpo_id = '000C'
+ );
+ /*
+    shohin_mei   | hanbai_tanka
+----------------+--------------
+ カッターシャツ |         4000
+ 包丁           |         3000
+ フォーク       |          500
+ おろしがね     |          880
+(4 行)
+ */
