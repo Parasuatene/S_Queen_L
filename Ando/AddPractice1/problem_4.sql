@@ -1,7 +1,7 @@
 SELECT
     last_name,
     job_id,
-    to_char(hire_date, 'DD-Mon-MM')  -- 日付を指定したフォーマットに変換する
+    to_char(hire_date, 'DD-Mon-MM') AS hire_date  -- 日付を指定したフォーマットに変換する
 FROM
     employees
 WHERE
