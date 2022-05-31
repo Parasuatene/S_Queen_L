@@ -64,3 +64,18 @@ SELECT shohin_id, shohin_mei
  0010      | やかん
 (13 行)
 */
+
+--テーブル間の共通部分を選択
+SELECT shohin_id, shohin_mei
+  FROM Shohin
+INTERSECT
+SELECT shohin_id, shohin_mei
+  FROM Shohin2;
+/*
+ shohin_id |   shohin_mei
+-----------+----------------
+ 0002      | 穴あけパンチ
+ 0003      | カッターシャツ
+ 0001      | Tシャツ
+(3 行)
+*/
