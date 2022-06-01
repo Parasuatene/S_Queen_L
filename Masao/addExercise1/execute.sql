@@ -267,3 +267,17 @@ ORDER BY last_name;       --ソートはここでいじる
  4 |         106 | Pataballa | 4800.00 |            60
 (4 行)
 */
+
+--12.
+SELECT ROW_NUMBER() OVER() AS " ",
+       last_name           AS "LAST_NAME"
+  FROM employees
+ WHERE last_name LIKE '__a%';
+/*
+   | LAST_NAME
+---+-----------
+ 1 | Grant
+ 2 | Grant
+ 3 | Whalen
+(3 行)
+*/
