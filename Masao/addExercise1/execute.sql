@@ -75,3 +75,20 @@ SELECT ROW_NUMBER() OVER() AS " ",
  20 | Olson       |  2100.00
 */
 
+--4.
+  SELECT ROW_NUMBER() OVER(ORDER BY hire_date) AS " ",
+         last_name                             AS "LAST_NAME",
+         job_id                                AS "JOB_ID",
+         hire_date                             AS "HIRE_DATE"
+    FROM employees
+   WHERE last_name IN ('Matos', 'Taylor') --文字列データはシングルコーテーションじゃないとダメ
+ORDER BY hire_date;
+
+/*
+   | LAST_NAME |  JOB_ID  | HIRE_DATE
+---+-----------+----------+------------
+ 1 | Taylor    | SH_CLERK | 2006-01-24
+ 2 | Matos     | ST_CLERK | 2006-03-15
+ 3 | Taylor    | SA_REP   | 2006-03-24
+(3 行)
+*/
