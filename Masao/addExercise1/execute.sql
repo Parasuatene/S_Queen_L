@@ -125,3 +125,23 @@ ORDER BY last_name;
  19 | Hartstein   |            20
  20 | Jones       |            50
 */
+
+--6.
+SELECT ROW_NUMBER() OVER() AS " ",
+       last_name           AS "Employee",
+       salary              AS "Monthly Salary"
+ FROM employees
+WHERE department_id IN (20, 50)
+  AND salary BETWEEN 5000 AND 12000;
+
+/*
+   | Employee | Monthly Salary
+---+----------+----------------
+ 1 | Weiss    |        8000.00
+ 2 | Fripp    |        8200.00
+ 3 | Kaufling |        7900.00
+ 4 | Vollman  |        6500.00
+ 5 | Mourgos  |        5800.00
+ 6 | Fay      |        6000.00
+(6 行)
+*/
