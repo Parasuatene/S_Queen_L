@@ -42,3 +42,36 @@ SELECT ROW_NUMBER() OVER(ORDER BY last_name) AS " ",
  1 | Taylor    |            80
 (1 行)
 */
+
+--3.
+SELECT ROW_NUMBER() OVER() AS " ",
+       last_name           AS "LAST_NAME",
+       salary              AS salary
+  FROM employees
+ WHERE salary NOT BETWEEN 5000 AND 12000;
+
+/*
+    |  LAST_NAME  |  salary
+----+-------------+----------
+  1 | King        | 24000.00
+  2 | Kochhar     | 17000.00
+  3 | De Haan     | 17000.00
+  4 | Austin      |  4800.00
+  5 | Pataballa   |  4800.00
+  6 | Lorentz     |  4200.00
+  7 | Greenberg   | 12008.00
+  8 | Khoo        |  3100.00
+  9 | Baida       |  2900.00
+ 10 | Tobias      |  2800.00
+ 11 | Himuro      |  2600.00
+ 12 | Colmenares  |  2500.00
+ 13 | Nayer       |  3200.00
+ 14 | Mikkilineni |  2700.00
+ 15 | Landry      |  2400.00
+ 16 | Markle      |  2200.00
+ 17 | Bissot      |  3300.00
+ 18 | Atkinson    |  2800.00
+ 19 | Marlow      |  2500.00
+ 20 | Olson       |  2100.00
+*/
+
