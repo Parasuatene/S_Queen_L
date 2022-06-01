@@ -287,7 +287,7 @@ SELECT ROW_NUMBER() OVER() AS " ",
 SELECT ROW_NUMBER() OVER() AS " ",
        last_name           AS "LAST_NAME"
   FROM employees
- WHERE last_name SIMILAR TO '(%ae%)|(%ea%)|(%a%e%)|(%e%a%)';
+ WHERE last_name SIMILAR TO '(%a%e%)|(%e%a%)';
 /*
     | LAST_NAME
 ----+------------
@@ -347,8 +347,8 @@ SELECT ROW_NUMBER() OVER() AS " ",
 --15.
 SELECT ROW_NUMBER() OVER() AS " ",
        last_name           AS "Employee",
-       salary AS "Monthly Salary",
-       commission_pct AS "COMMISSION_PCT"
+       salary              AS "Monthly Salary",
+       commission_pct      AS "COMMISSION_PCT"
   FROM employees
  WHERE commission_pct * 100 = 20;
 
