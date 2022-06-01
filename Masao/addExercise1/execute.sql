@@ -226,3 +226,24 @@ SELECT ROW_NUMBER() OVER() AS " ",
  20 | Fox        |  9600.00 |           0.20
 */
 
+--10.
+  SELECT ROW_NUMBER() OVER(ORDER BY salary DESC) AS " ",
+         last_name                               AS "LAST_NAME",
+         salary                                  AS "SALARY"
+    FROM employees
+   WHERE salary > 12000 --ここをユーザが指定する
+ORDER BY salary DESC;
+
+/*
+   | LAST_NAME |  SALARY
+---+-----------+----------
+ 1 | King      | 24000.00
+ 2 | Kochhar   | 17000.00
+ 3 | De Haan   | 17000.00
+ 4 | Russell   | 14000.00
+ 5 | Partners  | 13500.00
+ 6 | Hartstein | 13000.00
+ 7 | Greenberg | 12008.00
+ 8 | Higgins   | 12008.00
+(8 行)
+*/
