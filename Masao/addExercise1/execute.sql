@@ -145,3 +145,40 @@ WHERE department_id IN (20, 50)
  6 | Fay      |        6000.00
 (6 行)
 */
+
+--7.
+SELECT ROW_NUMBER() OVER() AS " ",
+       last_name           AS "Employee",
+       hire_date           AS "HIRE_DATE"
+  FROM employees
+ WHERE to_char(hire_date, 'YYYY') = '2006';
+
+/*
+    |  Employee   | HIRE_DATE
+----+-------------+------------
+  1 | Hunold      | 2006-01-03
+  2 | Pataballa   | 2006-02-05
+  3 | Urman       | 2006-03-07
+  4 | Himuro      | 2006-11-15
+  5 | Mikkilineni | 2006-09-28
+  6 | Rogers      | 2006-08-26
+  7 | Seo         | 2006-02-12
+  8 | Patel       | 2006-04-06
+  9 | Matos       | 2006-03-15
+ 10 | Vargas      | 2006-07-09
+ 11 | Olsen       | 2006-03-30
+ 12 | Cambrault   | 2006-12-09
+ 13 | Sewall      | 2006-11-03
+ 14 | Bloom       | 2006-03-23
+ 15 | Fox         | 2006-01-24
+ 16 | Taylor      | 2006-03-24
+ 17 | Livingston  | 2006-04-23
+ 18 | Taylor      | 2006-01-24
+ 19 | Fleaur      | 2006-02-23
+ 20 | Dellinger   | 2006-06-24
+ 21 | Gates       | 2006-07-11
+ 22 | McCain      | 2006-07-01
+ 23 | Walsh       | 2006-04-24
+ 24 | Feeney      | 2006-05-23
+(24 行)
+*/
