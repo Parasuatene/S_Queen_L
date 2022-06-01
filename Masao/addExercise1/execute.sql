@@ -148,13 +148,13 @@ WHERE department_id IN (20, 50)
 
 --7.
 SELECT ROW_NUMBER() OVER() AS " ",
-       last_name           AS "Employee",
+       last_name           AS "LAST_NAME",
        hire_date           AS "HIRE_DATE"
   FROM employees
  WHERE to_char(hire_date, 'YYYY') = '2006';
 
 /*
-    |  Employee   | HIRE_DATE
+    |  LAST_NAME  | HIRE_DATE
 ----+-------------+------------
   1 | Hunold      | 2006-01-03
   2 | Pataballa   | 2006-02-05
@@ -176,9 +176,4 @@ SELECT ROW_NUMBER() OVER() AS " ",
  18 | Taylor      | 2006-01-24
  19 | Fleaur      | 2006-02-23
  20 | Dellinger   | 2006-06-24
- 21 | Gates       | 2006-07-11
- 22 | McCain      | 2006-07-01
- 23 | Walsh       | 2006-04-24
- 24 | Feeney      | 2006-05-23
-(24 行)
 */
