@@ -92,3 +92,36 @@ ORDER BY hire_date;
  3 | Taylor    | SA_REP   | 2006-03-24
 (3 行)
 */
+
+--5
+  SELECT ROW_NUMBER() OVER(ORDER BY last_name) AS " ",
+         last_name                             AS "LAST_NAME",
+         department_id                         AS "DEPARTMENT_ID"
+    FROM employees
+   WHERE department_id IN (20, 50)
+ORDER BY last_name;
+
+/*
+    |  LAST_NAME  | DEPARTMENT_ID
+----+-------------+---------------
+  1 | Atkinson    |            50
+  2 | Bell        |            50
+  3 | Bissot      |            50
+  4 | Bull        |            50
+  5 | Cabrio      |            50
+  6 | Chung       |            50
+  7 | Davies      |            50
+  8 | Dellinger   |            50
+  9 | Dilly       |            50
+ 10 | Everett     |            50
+ 11 | Fay         |            20
+ 12 | Feeney      |            50
+ 13 | Fleaur      |            50
+ 14 | Fripp       |            50
+ 15 | Gates       |            50
+ 16 | Gee         |            50
+ 17 | Geoni       |            50
+ 18 | Grant       |            50
+ 19 | Hartstein   |            20
+ 20 | Jones       |            50
+*/
