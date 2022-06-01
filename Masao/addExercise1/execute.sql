@@ -310,3 +310,36 @@ SELECT ROW_NUMBER() OVER() AS " ",
  17 | Baer
 (17 行)
 */
+
+--14.
+SELECT ROW_NUMBER() OVER() AS " ",
+       last_name           AS "LAST_NAME",
+       job_id              AS "JOB_ID",
+       salary              AS "SALARY"
+  FROM employees
+ WHERE job_id IN ('SA_REP', 'ST_CLERK')
+   AND salary NOT IN (2500, 3500, 7000);
+/*
+    |  LAST_NAME  |  JOB_ID  |  SALARY
+----+-------------+----------+----------
+  1 | Nayer       | ST_CLERK |  3200.00
+  2 | Mikkilineni | ST_CLERK |  2700.00
+  3 | Landry      | ST_CLERK |  2400.00
+  4 | Markle      | ST_CLERK |  2200.00
+  5 | Bissot      | ST_CLERK |  3300.00
+  6 | Atkinson    | ST_CLERK |  2800.00
+  7 | Olson       | ST_CLERK |  2100.00
+  8 | Mallin      | ST_CLERK |  3300.00
+  9 | Rogers      | ST_CLERK |  2900.00
+ 10 | Gee         | ST_CLERK |  2400.00
+ 11 | Philtanker  | ST_CLERK |  2200.00
+ 12 | Ladwig      | ST_CLERK |  3600.00
+ 13 | Stiles      | ST_CLERK |  3200.00
+ 14 | Seo         | ST_CLERK |  2700.00
+ 15 | Davies      | ST_CLERK |  3100.00
+ 16 | Matos       | ST_CLERK |  2600.00
+ 17 | Tucker      | SA_REP   | 10000.00
+ 18 | Bernstein   | SA_REP   |  9500.00
+ 19 | Hall        | SA_REP   |  9000.00
+ 20 | Olsen       | SA_REP   |  8000.00
+*/
