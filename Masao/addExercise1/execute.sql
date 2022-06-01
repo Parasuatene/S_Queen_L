@@ -273,6 +273,7 @@ SELECT ROW_NUMBER() OVER() AS " ",
        last_name           AS "LAST_NAME"
   FROM employees
  WHERE last_name LIKE '__a%';
+
 /*
    | LAST_NAME
 ---+-----------
@@ -280,4 +281,32 @@ SELECT ROW_NUMBER() OVER() AS " ",
  2 | Grant
  3 | Whalen
 (3 行)
+*/
+
+--13.
+SELECT ROW_NUMBER() OVER() AS " ",
+       last_name           AS "LAST_NAME"
+  FROM employees
+ WHERE last_name SIMILAR TO '(%ae%)|(%ea%)|(%a%e%)|(%e%a%)';
+/*
+    | LAST_NAME
+----+------------
+  1 | De Haan
+  2 | Faviet
+  3 | Raphaely
+  4 | Colmenares
+  5 | Nayer
+  6 | Markle
+  7 | Philtanker
+  8 | Patel
+  9 | Davies
+ 10 | Partners
+ 11 | Sewall
+ 12 | Bates
+ 13 | Fleaur
+ 14 | Gates
+ 15 | Whalen
+ 16 | Hartstein
+ 17 | Baer
+(17 行)
 */
