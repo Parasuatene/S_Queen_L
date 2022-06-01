@@ -191,3 +191,38 @@ SELECT ROW_NUMBER() OVER() AS " ",
  1 | King      | AD_PRES
 (1 行)
 */
+
+--9.
+   SELECT ROW_NUMBER() OVER(ORDER BY commission_pct DESC) AS " ",
+          last_name                                       AS "LAST_NAME",
+          salary                                          AS "SALARY",
+          commission_pct                                  AS "COMMISSION_PCT"
+     FROM employees
+    WHERE commission_pct IS NOT NULL
+ ORDER BY commission_pct DESC;
+
+/*
+    | LAST_NAME  |  SALARY  | COMMISSION_PCT
+----+------------+----------+----------------
+  1 | Russell    | 14000.00 |           0.40
+  2 | Sully      |  9500.00 |           0.35
+  3 | McEwen     |  9000.00 |           0.35
+  4 | King       | 10000.00 |           0.35
+  5 | Partners   | 13500.00 |           0.30
+  6 | Errazuriz  | 12000.00 |           0.30
+  7 | Doran      |  7500.00 |           0.30
+  8 | Smith      |  8000.00 |           0.30
+  9 | Cambrault  | 11000.00 |           0.30
+ 10 | Abel       | 11000.00 |           0.30
+ 11 | Tucker     | 10000.00 |           0.30
+ 12 | Vishney    | 10500.00 |           0.25
+ 13 | Bernstein  |  9500.00 |           0.25
+ 14 | Hall       |  9000.00 |           0.25
+ 15 | Sewall     |  7000.00 |           0.25
+ 16 | Ozer       | 11500.00 |           0.25
+ 17 | Hutton     |  8800.00 |           0.25
+ 18 | Olsen      |  8000.00 |           0.20
+ 19 | Bloom      | 10000.00 |           0.20
+ 20 | Fox        |  9600.00 |           0.20
+*/
+
