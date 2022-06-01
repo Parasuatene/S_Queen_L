@@ -343,3 +343,24 @@ SELECT ROW_NUMBER() OVER() AS " ",
  19 | Hall        | SA_REP   |  9000.00
  20 | Olsen       | SA_REP   |  8000.00
 */
+
+--15.
+SELECT ROW_NUMBER() OVER() AS " ",
+       last_name           AS "Employee",
+       salary AS "Monthly Salary",
+       commission_pct AS "COMMISSION_PCT"
+  FROM employees
+ WHERE commission_pct * 100 = 20;
+
+/*
+   |  Employee  | Monthly Salary | COMMISSION_PCT
+---+------------+----------------+----------------
+ 1 | Zlotkey    |       10500.00 |           0.20
+ 2 | Olsen      |        8000.00 |           0.20
+ 3 | Cambrault  |        7500.00 |           0.20
+ 4 | Bloom      |       10000.00 |           0.20
+ 5 | Fox        |        9600.00 |           0.20
+ 6 | Taylor     |        8600.00 |           0.20
+ 7 | Livingston |        8400.00 |           0.20
+(7 行)
+*/
