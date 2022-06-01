@@ -247,3 +247,23 @@ ORDER BY salary DESC;
  8 | Higgins   | 12008.00
 (8 行)
 */
+
+--11.
+  SELECT ROW_NUMBER() OVER(ORDER BY last_name) AS " ", --ソートをいじるときはここもいじる
+         employee_id                           AS "EMPLOYEE_ID",
+         last_name                             AS "LAST_NAME",
+         salary                                AS "SALARY",
+         department_id                         AS "DEPARTMENT_ID"
+    FROM employees
+   WHERE manager_id = 103 --マネージャーIDはここでいじる
+ORDER BY last_name;       --ソートはここでいじる
+
+/*
+   | EMPLOYEE_ID | LAST_NAME | SALARY  | DEPARTMENT_ID
+---+-------------+-----------+---------+---------------
+ 1 |         105 | Austin    | 4800.00 |            60
+ 2 |         104 | Ernst     | 6000.00 |            60
+ 3 |         107 | Lorentz   | 4200.00 |            60
+ 4 |         106 | Pataballa | 4800.00 |            60
+(4 行)
+*/
