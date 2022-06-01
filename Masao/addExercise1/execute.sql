@@ -177,3 +177,17 @@ SELECT ROW_NUMBER() OVER() AS " ",
  19 | Fleaur      | 2006-02-23
  20 | Dellinger   | 2006-06-24
 */
+
+--8.
+SELECT ROW_NUMBER() OVER() AS " ",
+       last_name           AS "LAST_NAME",
+       job_id              AS "JOB_ID"
+  FROM employees
+ WHERE manager_id IS NULL;
+
+/*
+   | LAST_NAME | JOB_ID
+---+-----------+---------
+ 1 | King      | AD_PRES
+(1 行)
+*/
