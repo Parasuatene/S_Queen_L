@@ -28,3 +28,17 @@ SELECT ROW_NUMBER() OVER (ORDER BY salary DESC) AS " ",
   19 | King        | 10000.00
   20 | Fox         |  9600.00
 */
+
+--2.
+SELECT ROW_NUMBER() OVER(ORDER BY last_name) AS " ",
+       last_name                             AS "LAST_NAME",
+       department_id                         AS "DEPARTMENT_ID"
+  FROM employees
+ WHERE employee_id = 176;
+
+/*
+   | LAST_NAME | DEPARTMENT_ID
+---+-----------+---------------
+ 1 | Taylor    |            80
+(1 行)
+*/
