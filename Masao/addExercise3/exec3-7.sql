@@ -1,9 +1,9 @@
 SELECT
     ROW_NUMBER() OVER(ORDER BY emp.salary DESC) AS " ",
-    emp.last_name AS "LAST_NAME",
-    emp.job_id AS "JOB_ID",
-    dpt.department_name AS "DEPARTMENT_NAME",
-    ROUND(emp.salary) AS "SALARY",
+    emp.last_name                               AS "LAST_NAME",
+    emp.job_id                                  AS "JOB_ID",
+    dpt.department_name                         AS "DEPARTMENT_NAME",
+    ROUND(emp.salary)                           AS "SALARY",
     (
         CASE 
             WHEN emp.salary >= 15000 THEN 'E'
