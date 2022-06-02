@@ -1,7 +1,7 @@
 SELECT
     ROW_NUMBER() OVER() AS " ",
-    last_name AS "LAST_NAME",
-    hire_date AS "HIRES_DATE"
+    last_name           AS "LAST_NAME",
+    hire_date           AS "HIRES_DATE"
 FROM
     employees
 WHERE
